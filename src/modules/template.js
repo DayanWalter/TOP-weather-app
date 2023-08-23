@@ -1,5 +1,5 @@
 function template() {
-  console.log("Template");
+  console.log('Template');
 }
 
 export default template;

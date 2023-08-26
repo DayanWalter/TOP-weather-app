@@ -6,12 +6,15 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <form id="form">
-      <input type="text" />
-
-      <button id="fetch">Fetch Weather</button>
-      <p id="cityName"></p>
-      <p id="temp"></p>
-    </form>
+    <header><p>TemperatureApp</p></header>
+    <main>
+      <form id="form">
+        <input type="text" />
+        <button id="fetch">Go!</button>
+        <p id="city">city</p>
+        <p id="country">country</p>
+        <p id="temp">temp</p>
+      </form>
+    </main>
   </body>
 </html>

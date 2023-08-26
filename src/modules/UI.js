@@ -1,5 +1,6 @@
 const temp = document.getElementById('temp');
-const cityName = document.getElementById('cityName');
+const city = document.getElementById('city');
+const country = document.getElementById('country');
 
 export default class UI {
   // input the location and receive weatherdata via console
@@ -9,12 +10,16 @@ export default class UI {
   }
 
   static displayCityName(weatherData) {
-    cityName.innerText = `${weatherData.location.name}`;
+    city.innerText = `${weatherData.location.name}`;
+  }
+
+  static displayCountry(weatherData) {
+    country.innerText = `${weatherData.location.country}`;
   }
 
   static displayError(error) {
     console.log(error);
-    temp.innerText = '';
-    cityName.innerText = `City is unknown`;
+    temp.innerText = 'Please choose another Name';
+    city.innerText = `City is unknown`;
   }
 }

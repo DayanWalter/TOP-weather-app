@@ -20,8 +20,9 @@ async function getWeather() {
 
     UI.displayTemp(weatherData);
     UI.displayCityName(weatherData);
+    UI.displayCountry(weatherData);
 
-    return weatherData;
+    console.log(weatherData);
   } catch (error) {
     UI.displayError(error);
   }

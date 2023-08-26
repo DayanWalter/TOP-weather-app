@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 body {
   margin: 0;
@@ -9,11 +9,14 @@ header {
   height: 10%;
   background-color: #000dff;
   color: white;
-  /* border-bottom: 1px solid grey; */
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+}
+header i {
+  color: yellow;
 }
 header p {
   font-size: 54px;

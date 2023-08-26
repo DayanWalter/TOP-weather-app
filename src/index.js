@@ -21,8 +21,6 @@ async function getWeather() {
     UI.displayTemp(weatherData);
     UI.displayCityName(weatherData);
     UI.displayCountry(weatherData);
-
-    console.log(weatherData);
   } catch (error) {
     UI.displayError(error);
   }
@@ -34,4 +32,5 @@ async function getWeather() {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   getWeather();
+  form.reset();
 });

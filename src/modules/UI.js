@@ -11,4 +11,10 @@ export default class UI {
   static displayCityName(weatherData) {
     cityName.innerText = `${weatherData.location.name}`;
   }
+
+  static displayError(error) {
+    console.log(error);
+    temp.innerText = '';
+    cityName.innerText = `City is unknown`;
+  }
 }

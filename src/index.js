@@ -5,22 +5,32 @@ import './style.css';
 
 import UI from './modules/UI';
 
-const fetchButton = document.getElementById('fetch');
+// const fetchButton = document.getElementById('fetch');
+const form = document.getElementById('form');
 
 async function getWeather() {
   const input = document.querySelector('input').value;
 
-  const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=3a25b7e9e04241afbfe75158232208&q=${input}&aqi=no`,
-    { mode: 'cors' }
-  );
-  const weatherData = await response.json();
+  try {
+    const response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=3a25b7e9e04241afbfe75158232208&q=${input}&aqi=no`,
+      { mode: 'cors' }
+    );
+    const weatherData = await response.json();
 
-  UI.displayTemp(weatherData);
-  UI.displayCityName(weatherData);
+    UI.displayTemp(weatherData);
+    UI.displayCityName(weatherData);
 
-  console.log(weatherData);
-  return weatherData;
+    return weatherData;
+  } catch (error) {
+    UI.displayError(error);
+  }
+  // because of eslint
+  return null;
 }
 
-fetchButton.addEventListener('click', getWeather);
+// fetchButton.addEventListener('click', getWeather);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  getWeather();
+});

@@ -6,8 +6,6 @@ import './style.css';
 import UI from './modules/UI';
 
 const fetchButton = document.getElementById('fetch');
-const celsiusButton = document.getElementById('celsius');
-const fahrenheitButton = document.getElementById('fahrenheit');
 
 async function getWeather() {
   const input = document.querySelector('input').value;
@@ -18,20 +16,11 @@ async function getWeather() {
   );
   const weatherData = await response.json();
 
-  UI.changeTempToCelsius(weatherData);
+  UI.displayTemp(weatherData);
+  UI.displayCityName(weatherData);
 
+  console.log(weatherData);
   return weatherData;
 }
 
 fetchButton.addEventListener('click', getWeather);
-celsiusButton.addEventListener('click', () => {
-  getWeather().then((weatherData) => {
-    UI.changeTempToCelsius(weatherData);
-  });
-});
-
-fahrenheitButton.addEventListener('click', () => {
-  getWeather().then((weatherData) => {
-    UI.changeTempToFahrenheit(weatherData);
-  });
-});

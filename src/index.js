@@ -2,9 +2,7 @@ import 'normalize.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 import './style.css';
-import template from './modules/template';
 
-template();
 const p = document.querySelector('p');
 const fetchButton = document.getElementById('fetch');
 const celsiusButton = document.getElementById('celsius');
@@ -19,9 +17,7 @@ async function getWeather() {
     { mode: 'cors' }
   );
   const weatherData = await response.json();
-
-  p.innerText = `Temperatur in C: ${weatherData.current.temp_c}°`;
-
+  changeTempToCelsius(weatherData);
   return weatherData;
 }
 
